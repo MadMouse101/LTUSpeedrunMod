@@ -17,7 +17,7 @@ For better experience use BepInEx ConfigManager.
   <li>Put downloaded files into game root directory.</li>
   <li>Run game once. That will create folder structure.</li>
   <li>Download BepInEx configmanager -  https://github.com/BepInEx/BepInEx.ConfigurationManager</li>
-  <li>Put plugins folder into .../Lucky Tower Ultimate/BepInEx.</li>
+  <li>Find ConfigurationManager.dll and ConfigurationManagerAttributes files and put them in folder .../Lucky Tower Ultimate/BepInEx/plugins.</li>
 
 </ol>
 
