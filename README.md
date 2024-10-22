@@ -22,5 +22,6 @@ For better experience use BepInEx ConfigManager.
 
 • Mod installation
 <ol>
+  <li>Download LTUSpeedrunMod.dll</li>
   <li>Put LTUSpeedrunMod.dll file into .../Lucky Tower Ultimate/BepInEx/plugins.</li>
 </ol>
