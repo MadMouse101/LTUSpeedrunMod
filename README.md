@@ -18,6 +18,7 @@ For better experience use BepInEx ConfigManager.
   <li>Run game once. That will create folder structure.</li>
   <li>Download BepInEx configmanager -  https://github.com/BepInEx/BepInEx.ConfigurationManager</li>
   <li>Put plugins folder into .../Lucky Tower Ultimate/BepInEx.</li>
+
 </ol>
 
 • Mod installation
@@ -25,3 +26,6 @@ For better experience use BepInEx ConfigManager.
   <li>Download LTUSpeedrunMod.dll</li>
   <li>Put LTUSpeedrunMod.dll file into .../Lucky Tower Ultimate/BepInEx/plugins.</li>
 </ol>
+
+If config manager doesn't work.
+Open config file .../Lucky Tower Ultimate/BepInEx/Config/BepInEx and change HideManagerGameObject = false to HideManagerGameObject = true.
