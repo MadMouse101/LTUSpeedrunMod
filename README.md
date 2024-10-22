@@ -7,6 +7,6 @@ For better experience use BepInEx ConfigManager. - https://github.com/BepInEx/Be
 • Features 
 <ol>
   <li>Fast run restart (F2 by default).</li>
-  <li>Additional info inside F9.</li>
+  <li>Additional info inside F9 (Run number / In game timer).</li>
   <li>F9 debug always on mode.</li>
 </ol>
