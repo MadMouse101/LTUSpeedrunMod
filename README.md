@@ -1,6 +1,6 @@
 # LTUSpeedrunMod
 
-Mod ceated using BepInEx.
+Mod created using BepInEx.
 
 For better experience use BepInEx ConfigManager.
 
