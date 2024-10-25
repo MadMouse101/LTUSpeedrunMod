@@ -11,7 +11,7 @@ namespace LTUSpeedrunMod.Patches
         [HarmonyPostfix]
         static void canvasUpdate(ref TMP_Text ___m_combat)
         {
-            ___m_combat.text += $"\n\nRun: {GameManager.Instance.RunCounter} / Timer: {GameManager.Instance.RunTimer.Elapsed.ToString(@"hh\:mm\:ss\.fff")}";
+            ___m_combat.text += $"\n\nRun: {GameManager.Instance.RunCounter} / Timer: {GameManager.Instance.RunTimer.Elapsed:hh\\:mm\\:ss\\.fff}";
         }
     }
 }

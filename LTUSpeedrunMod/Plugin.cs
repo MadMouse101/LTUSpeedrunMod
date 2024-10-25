@@ -3,8 +3,8 @@ using BepInEx.Configuration;
 using BepInEx.Logging;
 using HarmonyLib;
 using LTUSpeedrunMod.Patches;
-using LuckyTower;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace LTUSpeedrunMod
 {
@@ -14,7 +14,7 @@ namespace LTUSpeedrunMod
         // bepinex setup
         private const string modGUID = "Mad.LTUSpeedrunMod";
         private const string modName = "LTU Speedrun Mod";
-        private const string modVersion = "1.0.0";
+        private const string modVersion = "1.0.1";
 
         private Harmony harmony = new Harmony(modGUID);
 
@@ -51,7 +51,7 @@ namespace LTUSpeedrunMod
         {
             if (SpeedrunModBase.restartManager.Value.IsDown())
             {
-                SceneLoader.LoadMasterScene();
+                SceneManager.LoadSceneAsync("MasterScene");
             }
         }
 
@@ -61,13 +61,13 @@ namespace LTUSpeedrunMod
             if (overhaulManager.Value)
             {
                 harmony.PatchAll(typeof(DebugCanvasPatch));
-                Logger.LogInfo("Additional stats patch applied.");
+                mls.LogInfo("Additional stats patch applied.");
             }
 
             if (alwaysOnF9Patch.Value)
             {
                 harmony.PatchAll(typeof(F9Patch));
-                Logger.LogInfo("F9 always on pathc applied.");
+                mls.LogInfo("F9 always on patch applied.");
             }
         }
 
@@ -77,13 +77,13 @@ namespace LTUSpeedrunMod
             if (overhaulManager.Value)
             {
                 harmony.PatchAll(typeof(DebugCanvasPatch));
-                Logger.LogInfo("Overhaul patch enabled.");
+                mls.LogInfo("Overhaul patch enabled.");
             }
             else
             {
                 var original = AccessTools.Method(typeof(DebugCanvas), "Update");
                 harmony.Unpatch(original, HarmonyPatchType.Postfix, modGUID);
-                Logger.LogInfo("Overhaul patch disabled.");
+                mls.LogInfo("Overhaul patch disabled.");
             }
         }
 
@@ -93,13 +93,13 @@ namespace LTUSpeedrunMod
             if (alwaysOnF9Patch.Value)
             {
                 harmony.PatchAll(typeof(F9Patch));
-                Logger.LogInfo("F9 patch enabled.");
+                mls.LogInfo("F9 patch enabled.");
             }
             else
             {
                 var original = AccessTools.Method(typeof(DebugCanvas), "Start");
                 harmony.Unpatch(original, HarmonyPatchType.Postfix, modGUID);
-                Logger.LogInfo("F9 patch disabled.");
+                mls.LogInfo("F9 patch disabled.");
             }
         }
 
